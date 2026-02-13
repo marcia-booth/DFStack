@@ -1,0 +1,9 @@
+{
+    "df": 26.0,
+    "package": {
+        "df-max": 26.0,
+        "df-min": 26.0,
+        "icon": "Bitmaps/stack.png",
+        "version": "1.0.0"
+    }
+}
