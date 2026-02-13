@@ -1,0 +1,108 @@
+﻿// cStack.pkg
+// cStack class
+// Functions to create and manipulate stacks
+// by Marcia Booth
+// Created on 08/16/2007
+// -----------------------------------------------------------------------
+
+Class cStack is a cObject
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+       
+        Property Variant[] pvStack
+    End_Procedure  // Construct_Object
+    
+  
+    // Function NumberOfNodesInStack
+    // Returns number of nodes in the stack
+    // ----------------------------------------------------------------------------------    
+    Function StackSize Returns Integer
+        Variant[] Stack
+
+        Get pvStack to Stack
+
+        Function_Return (SizeOfArray(Stack))
+    End_Function
+    
+
+    // Function IsStackEmpty
+    // Returns True if stack is empty
+    // ----------------------------------------------------------------------------------    
+    Function IsStackEmpty Returns Boolean
+        Integer iNumStackElements
+        
+        Get StackSize to iNumStackElements
+
+        Function_Return (iNumStackElements = 0)
+    End_Function
+        
+ 
+    // Function Peek
+    // Returns top element of the stack
+    // ----------------------------------------------------------------------------------    
+    Function Peek Returns Variant
+        Variant TopOfStack
+        Variant[] Stack
+        Integer iNumOfElements
+        
+        Get pvStack to Stack
+        Move (SizeOfArray(Stack)) to iNumOfElements
+        If (iNumOfElements > 0) Begin
+            Move Stack[iNumOfElements - 1] to TopOfStack 
+        End        
+        
+        Function_Return TopOfStack
+    End_Function
+ 
+ 
+    // Function Pop
+    // Remove top node from stack  
+    // Returns the top node of the stack that was removed
+    // ----------------------------------------------------------------------------------    
+    Function Pop Returns Variant
+        Variant TopOfStack
+        Variant[] Stack
+        Integer iNumOfElements
+        
+        Get pvStack to Stack
+        Move (SizeOfArray(Stack)) to iNumOfElements
+        If (iNumOfElements > 0) Begin
+            Move Stack[iNumOfElements - 1] to TopOfStack 
+            Move (RemoveFromArray(Stack, -1)) to Stack            
+            Set pvStack to Stack
+        End
+
+        Function_Return TopOfStack
+    End_Function
+
+
+    // Function Push
+    // Adds node to the top of the stack  
+    // Returns the index where the new node was placed in the stack
+    // ----------------------------------------------------------------------------------    
+    Function Push Variant ElementToAdd Returns Integer
+        Variant[] Stack
+        Integer iNumOfElements
+        
+        Get pvStack to Stack
+        Move (SizeOfArray(Stack)) to iNumOfElements
+        Move ElementToAdd to Stack[iNumOfElements]
+        Set pvStack to Stack
+
+        Function_Return iNumOfElements
+    End_Function    
+    
+ 
+    // Procedure ClearStack
+    // Clear the stack 
+    // ----------------------------------------------------------------------------------    
+    Procedure ClearStack 
+        Variant[] Stack
+        
+        Set pvStack to Stack
+
+    End_Procedure    
+
+        
+End_Class
