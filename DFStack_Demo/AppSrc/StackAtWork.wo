@@ -1,0 +1,203 @@
+﻿Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebTabContainer.pkg
+Use cWebTabPage.pkg
+Use cWebForm.pkg
+Use cWebButton.pkg
+Use cWebList.pkg
+Use cWebColumn.pkg
+
+// stack class to manipulate typed text
+Use cTextStack.pkg
+
+
+Object oStackAtWork is a cWebView
+    
+    Set piWidth to 700
+    Set psCaption to "Stack at Work"
+    Delegate Set phoDefaultView to Self
+    
+    
+    Object oMyTextStack is a cTextStack
+    End_Object
+    
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 9
+        Set peLayoutType to ltGrid
+        Set piRowCount to 4
+        Set psRowHeights to "1/45 2/274 3/77"
+        Set psColumnWidths to "2/54"
+
+        Object oWebButton2 is a cWebButton
+            Set piColumnSpan to 0
+            Set psCaption to "Pop"
+            Set piRowIndex to 1
+            Set piColumnIndex to 0
+        
+            Procedure OnClick
+                String sPoppedText
+                
+                Get PopTextFromStack of oMyTextStack to sPoppedText
+                Send ContainerRefresh of oWebTabContainer                
+            End_Procedure
+        End_Object
+
+
+        Object oTextForm is a cWebForm
+            Set piColumnSpan to 5
+            Set psLabel to "Text to push/get position for"
+            Set piRowIndex to 0
+            Set piColumnIndex to 4
+            Set peLabelPosition to lpTop
+        End_Object
+
+        Object oWebButton3 is a cWebButton
+            Set piColumnSpan to 0
+            Set psCaption to "Peek"
+            Set piRowIndex to 1
+            Set piColumnIndex to 1
+        
+            Procedure OnClick
+                String sTextTopOfStack
+                
+                Get TopOfTextStack of oMyTextStack to sTextTopOfStack 
+                If (sTextTopOfStack <> "") Begin 
+                    Send ShowInfoBox ("This is the text at the top:" * sTextTopOfStack) "Stack Sample" 
+                End
+                Else Begin
+                    Send ShowInfoBox ("No text at the top of the stack") "Stack Sample" 
+                End                
+            End_Procedure
+        End_Object
+
+        Object oWebButton1 is a cWebButton
+            Set piColumnSpan to 0
+            Set psCaption to "Push"
+            Set piRowIndex to 1
+            Set piColumnIndex to 7
+        
+            Procedure OnClick
+                String sTypedText
+                Integer iTextPos
+                
+                WebGet psValue of oTextForm to sTypedText
+                Get PushTextToStack of oMyTextStack sTypedText to iTextPos
+                Send ContainerRefresh of oWebTabContainer
+             End_Procedure
+        End_Object
+        
+        Object oWebButton4 is a cWebButton
+            Set piColumnSpan to 0
+            Set psCaption to "Position"
+            Set piRowIndex to 1
+            Set piColumnIndex to 8
+        
+            Procedure OnClick
+                String sTypedText
+                Integer iTextPos
+               
+                
+                WebGet psValue of oTextForm to sTypedText
+                Get TextPositionInStack of oMyTextStack sTypedText to iTextPos 
+                If (iTextPos > -1) Begin 
+                    Send ShowInfoBox ("This text is in position" * String(iTextPos) * "in the stack") "Stack Sample" 
+                End
+                Else Begin
+                    Send ShowInfoBox ("This text is NOT in the stack") "Stack Sample" 
+                End
+                
+            End_Procedure
+        End_Object        
+        
+        Procedure LoadStack tWebRow[] ByRef aTheRows
+            Integer iElemCount iNumElements
+            String sTextInStack
+            Variant[] CopyOfStack
+            
+            // save backup copy
+            Get CurrentTextStack of oMyTextStack to CopyOfStack   
+                     
+            Get NumberOfElementsInStack of oMyTextStack to iNumElements
+            For iElemCount from 0 to (iNumElements - 1)
+                Move iElemCount to aTheRows[iElemCount].sRowId
+                
+                Move (iNumElements - 1 - iElemCount) to aTheRows[iElemCount].aCells[0].sValue
+                Get PopTextFromStack of oMyTextStack to sTextInStack
+                Move sTextInStack to aTheRows[iElemCount].aCells[1].sValue                
+                
+            Loop
+            
+            // restore backup
+            Send ReplaceTextStack of oMyTextStack CopyOfStack 
+                   
+        End_Procedure
+
+
+        Object oWebTabContainer is a cWebTabContainer
+            Set pbFillHeight to True
+            Set piRowIndex to 2
+            Set piColumnIndex to 0
+            Set piColumnSpan to 9
+            
+            Procedure ContainerRefresh 
+                Send ShowStackOnList of oTextListPage
+            End_Procedure
+            
+
+            Object oTextListPage is a cWebTabPage
+                Set piColumnCount to 7
+                Set psCaption to "Text Stack"
+                Set peLayoutType to ltGrid
+                Set psRowHeights to "0/200"
+                Set psColumnWidths to ""
+                
+                Procedure ShowStackOnList 
+                    Send GridRefresh of oTextWebList
+                End_Procedure
+
+                Object oTextWebList is a cWebList
+                    Set piRowIndex to 0
+                    Set piColumnIndex to 0
+                    Set piColumnSpan to 6
+                    
+                    // manual list
+                    Set pbDataAware to False 
+                    Set peDbGridType to gtManual
+
+                    Object oRowNumberCol is a cWebColumn
+                        Set psCaption to "Row#"
+                        Set piWidth to 10
+                        Set piPosition to 1
+                    End_Object
+                    
+                    Object oTextCol is a cWebColumn
+                        Set psCaption to "Text"
+                        Set piWidth to 50
+                        Set piPosition to 2
+                    End_Object    
+                    
+                    Procedure OnManualLoadData tWebRow[] ByRef aTheRows String ByRef sCurrentRowID
+                                          
+                        Send LoadStack (&aTheRows) 
+                    End_Procedure    
+                    
+                    Procedure OnLoad
+                        Forward Send OnLoad
+            
+                        Send GridRefresh
+                    End_Procedure
+                    
+                End_Object
+                
+                
+         
+                
+            End_Object 
+
+
+        End_Object 
+
+    End_Object 
+
+End_Object
