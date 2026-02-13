@@ -1,0 +1,186 @@
+﻿Use cStack.pkg
+
+// cTrackText
+// A class to track  in stack
+
+Class cTextStack is a cStack
+    
+    Procedure Construct_Object
+        Variant[] TypedText
+        
+        Forward Send Construct_Object
+        
+        Set pvStack to TypedText
+    End_Procedure  // Construct_Object
+    
+
+    Procedure End_Construct_Object
+        Forward Send End_Construct_Object
+
+    End_Procedure // End_Construct_Object
+    
+
+ 
+
+    // Function SearchForCurrentText
+    // Returns index of the array where current text was found; -1 if not found
+    // ---------------------------------------------------------------------------
+    Function SearchForCurrentText String sTextToSearchFor Variant[] StackOfTexts Returns Integer
+        Integer iIndex
+    
+        // Search for current text in StackOfTexts
+        Move (SearchArray(sTextToSearchFor, StackOfTexts, Desktop , (RefFunc(DFSTRICMP)))) to iIndex
+         
+        Function_Return iIndex
+    End_Function
+
+
+    // Function TextPositionInStack
+    // Returns the index number of the passed text in the stack; -1 if not found
+    // ----------------------------------------------------------------------------------    
+    Function TextPositionInStack String sTextToFind Returns Integer
+        Integer iStackPos
+        Variant[] StackOfTexts
+        
+        Get pvStack to StackOfTexts
+        Get SearchForCurrentText sTextToFind StackOfTexts to iStackPos
+ 
+        Function_Return iStackPos
+    End_Function
+
+
+ 
+    // Function IsTextTopOfStack
+    // Returns True if the text is in the 1st position in the stack 
+    // ----------------------------------------------------------------------------------    
+    Function IsTextTopOfStack String sTextToFind Returns Boolean
+        Integer iStackPos
+
+        Get TextPositionInStack sTextToFind to iStackPos
+ 
+        Function_Return (iStackPos = 0)
+    End_Function
+
+
+
+    // Function CurrentTextStack
+    // Returns the current text stack
+    // ----------------------------------------------------------------------------------    
+    Function CurrentTextStack Returns Variant[]
+        Variant[] StackOfTexts
+        
+        Get pvStack to StackOfTexts
+
+        Function_Return StackOfTexts
+    End_Function
+    
+
+    // Procedure ReplaceTextStack
+    // Replace current text stack with new stack
+    // ----------------------------------------------------------------------------------    
+    Procedure ReplaceTextStack Variant[] NewTextStack
+        
+        Set pvStack to NewTextStack
+
+    End_Procedure    
+    
+ 
+    // Function TopOfTextStack
+    // Returns top node of the text stack
+    // ----------------------------------------------------------------------------------    
+    Function TopOfTextStack Returns String
+        String TopOfStack
+        Boolean bEmpty
+        
+        Get IsTextStackEmpty to bEmpty
+        If (not(bEmpty)) Begin
+          Get Peek to TopOfStack  
+        End
+        
+        Function_Return TopOfStack
+    End_Function
+ 
+ 
+    // Function PopTextFromStack
+    // Remove top node from stack  
+    // Returns the top node of the text stack that was removed
+    // ----------------------------------------------------------------------------------    
+    Function PopTextFromStack Returns String
+        String TopOfStack
+        
+        If (not(IsStackEmpty(Self))) Begin
+            Get Pop to TopOfStack
+        End
+        
+        Function_Return TopOfStack
+    End_Function
+
+
+    // Function PushTextToStack
+    // Adds text to the top of the stack  
+    // Returns the node where the text was placed in the stack
+    // ----------------------------------------------------------------------------------    
+    Function PushTextToStack String sTextToAdd Returns Integer
+        Integer iTextPosInStack
+        
+        Get Push sTextToAdd to iTextPosInStack
+        
+        Function_Return iTextPosInStack
+    End_Function    
+    
+ 
+    // Function NumberOfElementsInStack
+    // Returns number of nodes in the stack
+    // ----------------------------------------------------------------------------------    
+    Function NumberOfElementsInStack Returns Integer
+        Integer iNumElements
+        
+        Get StackSize to iNumElements
+
+        Function_Return iNumElements
+    End_Function
+    
+
+    // Function IsTextStackEmpty
+    // Returns True if stack is empty
+    // ----------------------------------------------------------------------------------    
+    Function IsTextStackEmpty Returns Boolean
+        Boolean bEmpty
+        
+        Get IsStackEmpty to bEmpty
+
+        Function_Return bEmpty
+    End_Function
+
+ 
+    // Function UpdateTopOfStackInfo
+    // Returns true if top node of stack was updated
+    // ----------------------------------------------------------------------------------    
+    Function UpdateTopOfStack String sNewText Returns Boolean
+        Boolean bIsEmpty
+        String sOldText
+        Integer iNewTextPos
+
+
+        Move -1 to iNewTextPos
+        Get IsTextStackEmpty to bIsEmpty
+
+        If (not(bIsEmpty)) Begin
+            // stack is not empty; updated it
+            Get PopTextFromStack to sOldText
+            Get PushTextToStack sNewText to iNewTextPos            
+        End
+        
+        Function_Return (iNewTextPos > -1)        
+    End_Function
+
+
+    // Procedure ClearTextStack
+    // Clear the stack removing all text elements from it
+    // ----------------------------------------------------------------------------------    
+    Procedure ClearTextStack 
+        Send ClearStack
+    End_Procedure
+
+        
+End_Class

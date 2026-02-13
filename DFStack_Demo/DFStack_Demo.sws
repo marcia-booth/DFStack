@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "../DFStack_Library/DFStack_Library.sws"
+    ],
+    "df": 26.0,
+    "projects": [
+        "WebApp"
+    ]
+}
