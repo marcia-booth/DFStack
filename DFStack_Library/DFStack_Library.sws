@@ -4,6 +4,8 @@
         "df-max": 26.0,
         "df-min": 26.0,
         "icon": "Bitmaps/stack.png",
+        "license": "MIT",
+        "licenseFile": "Help/LICENSE.txt",
         "version": "1.0.0"
     }
 }

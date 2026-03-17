@@ -1,9 +1,11 @@
 {
     "dependencies": [
+        "DataFlex-dev/Web UI Material Theme#1.0.2",
+        "DataFlex-dev/Web UI Server#1.0.41",
         "../DFStack_Library/DFStack_Library.sws"
     ],
     "df": 26.0,
     "projects": [
-        "WebApp"
+        "WebApp.src"
     ]
 }

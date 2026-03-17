@@ -1,0 +1,203 @@
+﻿Use cWebForm.pkg
+Use cSelectionSource.pkg
+
+{ Navigable="" }
+Class cWebBaseSelectionForm is a cWebForm
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        
+        { Visibility=Private }
+        { WebProperty=Client } 
+        Property Boolean pbFullText                 False
+        { Visibility=Private }
+        { WebProperty=Client } 
+        Property Boolean pbCaseSensitive            False
+        { Visibility=Private }
+        { WebProperty=Client }
+        Property Boolean pbAllData                  False
+        { Visibility=Private }
+        { WebProperty=Client }
+        Property Boolean pbSuggestions              False
+        { Visibility=Private }
+        { WebProperty=Client }
+        Property Boolean pbPaged                    False
+        { Visibility=Private }
+        { WebProperty=Client }
+        Property Boolean pbSourceIsValidationTable  False
+        
+        { WebProperty=Client } 
+        { Category="Behavior" }
+        Property Integer piPageSize                 10
+        { WebProperty=Client } 
+        { Category="Behavior" }
+        Property Integer piStartAtChar              0
+        { WebProperty=Client } 
+        { Category="Appearance" }
+        Property Integer piPopupWidth               0
+        { WebProperty=Client }
+        { Category="Behavior" } 
+        Property Integer piTypeTimeout              20
+        { WebProperty=Client }
+        { Category="Behavior" }
+        Property String psShowMoreText              C_$ShowMore
+        {WebProperty=Client}
+        { Category="Appearance" }
+        Property String psCreateNewItemText         C_$CreateNew
+        { WebProperty=Client }
+        { Category="Behavior" }
+        Property Boolean pbAllowCreate              False
+        { Category="Behavior" }
+        { WebProperty=Client }
+        Property Integer piMinimumItemLength        2
+        
+        { Visibility=Private }
+        Property Boolean pbAutoCreate               False // This property exists to solve the recursive include.
+        
+        { Visibility=Private }
+        Property Handle phoSelectionSource          0
+
+        Set pbPromptButton to True
+        Set pbServerOnPrompt to False
+        Set pbAllowCreate to False
+
+        Set psJSClass to "df.WebBaseSelectionForm"
+    End_Procedure
+    
+    { Visibility=Private }
+    Procedure PreSerializeObject
+        Boolean bFullText bIsValidationTable bCaseSensetive bAllData bSuggestions bPaged
+        Handle hoSelectionSource
+        
+        Get phoSelectionSource to hoSelectionSource
+        
+        If (hoSelectionSource > 0) Begin
+            Get pbCaseSensitive of hoSelectionSource to bCaseSensetive            
+            Get pbFullText of hoSelectionSource to bFullText
+            Get pbAllData of hoSelectionSource to bAllData
+            Get pbSuggestions of hoSelectionSource to bSuggestions
+            Get pbPaged of hoSelectionSource to bPaged
+            
+            Set pbFullText to bFullText
+            Get pbUseValidationTable of hoSelectionSource to bIsValidationTable
+            Set pbSourceIsValidationTable to bIsValidationTable
+            
+            If (bAllData and bSuggestions) ;
+                Error DFERR_PROGRAM "Invalid suggestion mode."
+            If (bAllData and bPaged) ;
+                Error DFERR_PROGRAM "Invalid suggestion mode."
+            If (bSuggestions and bPaged) ;
+                Error DFERR_PROGRAM "Invalid suggestion mode."
+            If (not(bAllData) and not(bSuggestions) and not(bPaged)) ;
+                Error DFERR_PROGRAM "Invalid suggestion mode."
+            
+            Set pbAllData to bAllData
+            Set pbSuggestions to bSuggestions
+            Set pbPaged to bPaged
+            Set pbCaseSensitive to bCaseSensetive
+        End
+    End_Procedure
+    
+    { MethodType=Property }
+    { Category="Data" }
+    Procedure Set SelectionSource Handle hoSelectionSource
+        Set phoSelectionSource to hoSelectionSource
+    End_Procedure
+    
+    { MethodType=Property }
+    Function SelectionSource Returns Handle
+        Function_Return (phoSelectionSource(Self))
+    End_Function
+    
+    {MethodType=Event}
+    Procedure OnCreate tSelectionItem ByRef NewItem Boolean ByRef bCancel
+        // Stub
+    End_Procedure
+    
+    {Visibility=Private}
+    Procedure CreateNewByValue String sValue
+        tSelectionItem oNewItem
+        Boolean bCancel bFound bErr bAllowCreate bSuccess
+        Integer iFile iField
+        Handle hoSelectionSource hoServer hoTable
+        
+        Get pbAllowCreate to bAllowCreate
+        If (not(bAllowCreate)) ;
+            Procedure_Return
+        
+        Move sValue to oNewItem.aValues[0]
+        Send OnCreate (&oNewItem) (&bCancel)
+        
+        If (bCancel) ;
+            Procedure_Return
+        
+        Get phoSelectionSource to hoSelectionSource
+        
+        If (hoSelectionSource > 0) Begin
+            If (pbAutoCreate(hoSelectionSource)) Begin
+                Get CreateItem of hoSelectionSource (&oNewItem) oNewItem.aValues[0] to bSuccess
+                If (not(bSuccess)) ;
+                    Procedure_Return
+            End
+        End
+        
+        Send OnPostCreate oNewItem
+    End_Procedure
+    
+    Procedure Refill
+        String[] aParams
+        Move True to aParams[0]
+        Send ClientAction "suggestLoad" aParams
+    End_Procedure
+    
+    { Visibility=Private }
+    Procedure FindSuggestions String sFilter Integer iPage Integer iAdditionalItems
+        tSelectionItem[] aItems
+        Handle hoJson hoSelectionSource
+        Boolean bLast bIsObj
+        tSelectionItem prevItem
+        String[] aParams
+        Integer iPageSize
+            
+        Get phoSelectionSource to hoSelectionSource
+        WebGet piPageSize to iPageSize
+        
+        // For suggestionmode additional items are required in the webtagsform.
+        Move (iPageSize + iAdditionalItems) to iPageSize
+        
+        Get phoActionJsonData to hoJson
+        If (hoJson > 0) Begin
+            Get JsonToDataType of hoJson to prevItem
+        End
+        
+        If (hoSelectionSource > 0) Begin
+            Send FetchItems of hoSelectionSource (&aItems) (&bLast) sFilter prevItem iPageSize iPage
+            If (pbAllData(hoSelectionSource)) Begin
+                Move True to bLast
+            End
+        End
+        
+        Send OnFindSuggestions (&aItems) (&bLast) sFilter prevItem iPage
+        
+        Move sFilter to aParams[0]
+        Move (String(bLast)) to aParams[1]
+        Send ClientAction "suggestHandle" aParams aItems iPage
+    End_Procedure
+    
+    { MethodType=Event }
+    Procedure OnFindSuggestions tSelectionItem[] ByRef aItems Boolean ByRef bLast String sFilter tSelectionItem prevItem Integer iPage
+        // Stub
+    End_Procedure
+    
+    Procedure ShowSuggestions
+        Send ClientAction "showSuggestions"
+    End_Procedure
+
+    Procedure End_Construct_Object
+        Forward Send End_Construct_Object
+        
+        WebPublishProcedure CreateNewByValue
+        WebPublishProcedure FindSuggestions
+    End_Procedure
+
+End_Class
