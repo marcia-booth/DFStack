@@ -1,5 +1,5 @@
 [Workspace]
-Home=..
+Home=..\
 AppHTMLPath=AppHtml
 AppSrcPath=AppSrc
 DataPath=Data
@@ -8,5 +8,5 @@ BitmapPath=Bitmaps
 IdeSrcPath=IdeSrc
 HelpPath=Help
 ProgramPath=Programs
-FileList=Data/Filelist.cfg
-Description=DFStack
+FileList=Data\Filelist.cfg
+Description=DFStack_Library
