@@ -1,8 +1,6 @@
 ﻿// cStack.pkg
 // cStack class
 // Functions to create and manipulate stacks
-// by Marcia Booth
-// Created on 08/16/2007
 // -----------------------------------------------------------------------
 
 Class cStack is a cObject

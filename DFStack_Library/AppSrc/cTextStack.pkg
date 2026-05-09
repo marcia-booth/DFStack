@@ -1,7 +1,9 @@
-﻿Use cStack.pkg
-
-// cTrackText
+﻿// cTrackText.pkg
+// cTrackText class
 // A class to track text in stack
+// -----------------------------------------------------------------------
+
+Use cStack.pkg
 
 Class cTextStack is a cStack
     
