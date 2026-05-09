@@ -1,7 +1,6 @@
-﻿// cStack.pkg
-// cStack class
-// Functions to create and manipulate stacks
-// by Marcia Booth
+﻿// cWebStack.pkg
+// cWebStack class
+// Functions to create and manipulate stacks for web
 // -----------------------------------------------------------------------
 
 Class cWebStack is a cWebObject

@@ -1,7 +1,9 @@
-﻿Use cWebStack.pkg
+﻿// cWebTrackText.pkg
+// cWebTrackText class
+// A class to track text in stack for web
+// -----------------------------------------------------------------------
 
-// cWebTrackText
-// A class to track text in stack
+Use cWebStack.pkg
 
 Class cWebTextStack is a cWebStack
     
