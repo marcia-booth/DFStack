@@ -7,8 +7,8 @@ Use cWebButton.pkg
 Use cWebList.pkg
 Use cWebColumn.pkg
 
-// stack class to manipulate typed text
-Use cTextStack.pkg
+// stack class to manipulate typed text on the web
+Use cWebTextStack.pkg
 
 
 Object oStackAtWork is a cWebView
@@ -18,7 +18,7 @@ Object oStackAtWork is a cWebView
     Delegate Set phoDefaultView to Self
     
     
-    Object oMyTextStack is a cTextStack
+    Object oMyWebTextStack is a cWebTextStack
     End_Object
     
 
@@ -29,7 +29,7 @@ Object oStackAtWork is a cWebView
         Set psRowHeights to "1/45 2/274 3/77"
         Set psColumnWidths to "2/54"
 
-        Object oWebButton2 is a cWebButton
+        Object oPopWebButton is a cWebButton
             Set piColumnSpan to 0
             Set psCaption to "Pop"
             Set piRowIndex to 1
@@ -38,7 +38,7 @@ Object oStackAtWork is a cWebView
             Procedure OnClick
                 String sPoppedText
                 
-                Get PopTextFromStack of oMyTextStack to sPoppedText
+                Get PopTextFromStack of oMyWebTextStack to sPoppedText
                 Send ContainerRefresh of oWebTabContainer                
             End_Procedure
         End_Object
@@ -52,7 +52,7 @@ Object oStackAtWork is a cWebView
             Set peLabelPosition to lpTop
         End_Object
 
-        Object oWebButton3 is a cWebButton
+        Object oPeekWebButton is a cWebButton
             Set piColumnSpan to 0
             Set psCaption to "Peek"
             Set piRowIndex to 1
@@ -61,7 +61,7 @@ Object oStackAtWork is a cWebView
             Procedure OnClick
                 String sTextTopOfStack
                 
-                Get TopOfTextStack of oMyTextStack to sTextTopOfStack 
+                Get TopOfTextStack of oMyWebTextStack to sTextTopOfStack 
                 If (sTextTopOfStack <> "") Begin 
                     Send ShowInfoBox ("This is the text at the top:" * sTextTopOfStack) "Stack Sample" 
                 End
@@ -71,7 +71,7 @@ Object oStackAtWork is a cWebView
             End_Procedure
         End_Object
 
-        Object oWebButton1 is a cWebButton
+        Object oPushWebButton is a cWebButton
             Set piColumnSpan to 0
             Set psCaption to "Push"
             Set piRowIndex to 1
@@ -82,12 +82,12 @@ Object oStackAtWork is a cWebView
                 Integer iTextPos
                 
                 WebGet psValue of oTextForm to sTypedText
-                Get PushTextToStack of oMyTextStack sTypedText to iTextPos
+                Get PushTextToStack of oMyWebTextStack sTypedText to iTextPos
                 Send ContainerRefresh of oWebTabContainer
              End_Procedure
         End_Object
         
-        Object oWebButton4 is a cWebButton
+        Object oPositionWebButton is a cWebButton
             Set piColumnSpan to 0
             Set psCaption to "Position"
             Set piRowIndex to 1
@@ -96,10 +96,9 @@ Object oStackAtWork is a cWebView
             Procedure OnClick
                 String sTypedText
                 Integer iTextPos
-               
-                
+                               
                 WebGet psValue of oTextForm to sTypedText
-                Get TextPositionInStack of oMyTextStack sTypedText to iTextPos 
+                Get TextPositionInStack of oMyWebTextStack sTypedText to iTextPos 
                 If (iTextPos > -1) Begin 
                     Send ShowInfoBox ("This text is in position" * String(iTextPos) * "in the stack") "Stack Sample" 
                 End
@@ -116,20 +115,20 @@ Object oStackAtWork is a cWebView
             Variant[] CopyOfStack
             
             // save backup copy
-            Get CurrentTextStack of oMyTextStack to CopyOfStack   
+            Get CurrentTextStack of oMyWebTextStack to CopyOfStack   
                      
-            Get NumberOfElementsInStack of oMyTextStack to iNumElements
+            Get NumberOfElementsInStack of oMyWebTextStack to iNumElements
             For iElemCount from 0 to (iNumElements - 1)
                 Move iElemCount to aTheRows[iElemCount].sRowId
                 
                 Move (iNumElements - 1 - iElemCount) to aTheRows[iElemCount].aCells[0].sValue
-                Get PopTextFromStack of oMyTextStack to sTextInStack
+                Get PopTextFromStack of oMyWebTextStack to sTextInStack
                 Move sTextInStack to aTheRows[iElemCount].aCells[1].sValue                
                 
             Loop
             
             // restore backup
-            Send ReplaceTextStack of oMyTextStack CopyOfStack 
+            Send ReplaceTextStack of oMyWebTextStack CopyOfStack 
                    
         End_Procedure
 
