@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <classList xmlns="http://www.dataaccess.com/VisualDataFlex/2006/classlist/">
-	<VDFLibraryTimeStamp>2026-03-16T12:33:54</VDFLibraryTimeStamp>
+	<VDFLibraryTimeStamp>2026-04-20T21:24:26</VDFLibraryTimeStamp>
 	<DFLibraryVersion>2</DFLibraryVersion><libraries></libraries>
 	<classes>
 		<class>
@@ -9,6 +9,7 @@
 			<package>cWebView2Browser.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>BitmapContainer</className>
@@ -16,6 +17,7 @@
 			<package>dfBitmap.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Button</className>
@@ -23,6 +25,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cSplitButton</className>
@@ -30,6 +33,7 @@
 			<package>cSplitButton.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCommandLinkButton</className>
@@ -37,6 +41,7 @@
 			<package>cCommandLinkButton.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cAnimation</className>
@@ -44,6 +49,7 @@
 			<package>cAnimation.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJGrid</className>
@@ -51,6 +57,7 @@
 			<package>cCJGrid.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJGridColumn</className>
@@ -58,6 +65,7 @@
 			<package>cCJGridColumn.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJGridColumnRowIndicator</className>
@@ -65,6 +73,7 @@
 			<package>cCJGridColumnRowIndicator.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJGridPromptList</className>
@@ -72,6 +81,7 @@
 			<package>cCJGridPromptList.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbTagsForm</className>
@@ -79,6 +89,7 @@
 			<package>cDbTagsForm.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Checkbox</className>
@@ -86,6 +97,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cLinkLabel</className>
@@ -93,6 +105,7 @@
 			<package>cLinkLabel.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>ComboForm</className>
@@ -100,6 +113,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cProgressBar</className>
@@ -107,6 +121,7 @@
 			<package>cProgressBar.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cRichEdit</className>
@@ -114,6 +129,7 @@
 			<package>cRichEdit.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cTagsForm</className>
@@ -121,6 +137,7 @@
 			<package>cTagsForm.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cTextEdit</className>
@@ -128,6 +145,7 @@
 			<package>cTextEdit.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Form</className>
@@ -135,6 +153,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>LineControl</className>
@@ -142,6 +161,7 @@
 			<package>dfLine.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Radio</className>
@@ -149,6 +169,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>SpinForm</className>
@@ -156,6 +177,7 @@
 			<package>dfSpnFrm.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>TextBox</className>
@@ -163,6 +185,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Trackbar</className>
@@ -170,6 +193,7 @@
 			<package>TrckBr.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>TreeView</className>
@@ -177,6 +201,7 @@
 			<package>dfTreeVw.pkg</package>
 			<groupName>Base Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Container3D</className>
@@ -184,6 +209,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cScrollingContainer</className>
@@ -191,6 +217,7 @@
 			<package>cScrollingContainer.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cSplitterContainer</className>
@@ -198,6 +225,7 @@
 			<package>cSplitterContainer.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Group</className>
@@ -205,6 +233,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>ModalPanel</className>
@@ -212,6 +241,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>RadioGroup</className>
@@ -219,6 +249,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>TabDialog</className>
@@ -226,6 +257,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>ToolPanel</className>
@@ -233,6 +265,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>View</className>
@@ -240,6 +273,7 @@
 			<package>Dfadlg.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>ReportView</className>
@@ -247,6 +281,7 @@
 			<package>DFRptVw.pkg</package>
 			<groupName>Base Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbCJGrid</className>
@@ -254,6 +289,7 @@
 			<package>cDbCJGrid.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbCJGridColumn</className>
@@ -261,6 +297,7 @@
 			<package>cDbCJGridColumn.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbCJGridColumnSuggestion</className>
@@ -268,6 +305,7 @@
 			<package>cDbCJGridColumnSuggestion.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbCJGridPromptList</className>
@@ -275,6 +313,7 @@
 			<package>cDbCJGridPromptList.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbRichEdit</className>
@@ -282,6 +321,7 @@
 			<package>cDbRichEdit.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbTextEdit</className>
@@ -289,6 +329,7 @@
 			<package>cDbTextEdit.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbBitmap</className>
@@ -296,6 +337,7 @@
 			<package>dbBitmap.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbCheckbox</className>
@@ -303,6 +345,7 @@
 			<package>dfEnChk.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbComboForm</className>
@@ -310,6 +353,7 @@
 			<package>dfcentry.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbForm</className>
@@ -317,6 +361,7 @@
 			<package>dfEntry.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbSuggestionForm</className>
@@ -324,6 +369,7 @@
 			<package>dbSuggestionForm.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbParentCombo</className>
@@ -331,6 +377,7 @@
 			<package>dbParentCombo.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbSpinForm</className>
@@ -338,6 +385,7 @@
 			<package>dfSpnEnt.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbTrackbar</className>
@@ -345,13 +393,7 @@
 			<package>dbTrckBr.pkg</package>
 			<groupName>Data Controls</groupName>
 			<libraryID>0</libraryID>
-		</class>
-		<class>
-			<className>cDbLocalWebControlHost</className>
-			<image>cDbLocalWebControlHost.ico</image>
-			<package>cDbLocalWebControlHost.pkg</package>
-			<groupName>Data Containers</groupName>
-			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbScrollingContainer</className>
@@ -359,6 +401,7 @@
 			<package>cDbScrollingContainer.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cDbSplitterContainer</className>
@@ -366,6 +409,7 @@
 			<package>cDbSplitterContainer.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbContainer3D</className>
@@ -373,6 +417,7 @@
 			<package>dfClient.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbGroup</className>
@@ -380,6 +425,7 @@
 			<package>dfclient.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbModalPanel</className>
@@ -387,6 +433,7 @@
 			<package>dfClient.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbRadioGroup</className>
@@ -394,6 +441,7 @@
 			<package>dfEnRad.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbTabDialog</className>
@@ -401,6 +449,7 @@
 			<package>dfTabDlg.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbTabDialogView</className>
@@ -408,6 +457,7 @@
 			<package>dfTabDlg.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>dbView</className>
@@ -415,6 +465,7 @@
 			<package>DfClient.pkg</package>
 			<groupName>Data Containers</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>ColorDialog</className>
@@ -422,6 +473,7 @@
 			<package>Colr_dlg.pkg</package>
 			<groupName>Dialogs</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>FontDialog</className>
@@ -429,6 +481,7 @@
 			<package>Font_dlg.pkg</package>
 			<groupName>Dialogs</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>OpenDialog</className>
@@ -436,6 +489,7 @@
 			<package>File_dlg.pkg</package>
 			<groupName>Dialogs</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cSelectFolderDialog</className>
@@ -443,6 +497,7 @@
 			<package>cSelectFolderDialog.pkg</package>
 			<groupName>Dialogs</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>SaveAsDialog</className>
@@ -450,6 +505,7 @@
 			<package>File_dlg.pkg</package>
 			<groupName>Dialogs</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cFtpTransfer</className>
@@ -457,6 +513,7 @@
 			<package>VdfBase.pkg</package>
 			<groupName>Internet</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cHttpTransfer</className>
@@ -464,6 +521,7 @@
 			<package>cHttpTransfer.pkg</package>
 			<groupName>Internet</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cJsonHttpTransfer</className>
@@ -471,6 +529,7 @@
 			<package>cJsonHttpTransfer.pkg</package>
 			<groupName>Internet</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cXmlHttpTransfer</className>
@@ -478,6 +537,7 @@
 			<package>cXmlHttpTransfer.pkg</package>
 			<groupName>Internet</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>Array</className>
@@ -485,6 +545,7 @@
 			<package>VdfBase.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>BusinessProcess</className>
@@ -492,6 +553,7 @@
 			<package>BatchDD.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cApplication</className>
@@ -499,6 +561,7 @@
 			<package>cApplication.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cConnection</className>
@@ -506,6 +569,7 @@
 			<package>cConnection.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cCharTranslate</className>
@@ -513,6 +577,7 @@
 			<package>cCharTranslate.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cCJSkinFramework</className>
@@ -520,6 +585,7 @@
 			<package>cCJSkinFramework.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cHtmlHelp</className>
@@ -527,6 +593,7 @@
 			<package>cHtmlHelp.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cIdleHandler</className>
@@ -534,6 +601,7 @@
 			<package>Windows.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cImageList32</className>
@@ -541,6 +609,7 @@
 			<package>cImageList32.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cIniFile</className>
@@ -548,6 +617,7 @@
 			<package>cIniFile.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cObject</className>
@@ -555,6 +625,7 @@
 			<package>VdfBase.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cSeqFileHelper</className>
@@ -562,6 +633,7 @@
 			<package>cSeqFileHelper.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cTimer</className>
@@ -569,6 +641,7 @@
 			<package>cTimer.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cToolTipController</className>
@@ -576,6 +649,7 @@
 			<package>cToolTipController.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cWinReport2</className>
@@ -583,6 +657,7 @@
 			<package>cWinReport2.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>Set</className>
@@ -590,6 +665,7 @@
 			<package>Set.pkg</package>
 			<groupName>Others</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Common</classLibrary>
 		</class>
 		<class>
 			<className>cCJContextMenu</className>
@@ -597,6 +673,7 @@
 			<package>cCJCommandBarSystem.pkg</package>
 			<groupName>Menus and Toolbars</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJMenuBar</className>
@@ -604,6 +681,7 @@
 			<package>cCJCommandBarSystem.pkg</package>
 			<groupName>Menus and Toolbars</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJStatusbar</className>
@@ -611,6 +689,7 @@
 			<package>cCJCommandBarSystem.pkg</package>
 			<groupName>Menus and Toolbars</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJStatusbarPane</className>
@@ -618,6 +697,7 @@
 			<package>cCJCommandBarSystem.pkg</package>
 			<groupName>Menus and Toolbars</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 		<class>
 			<className>cCJToolbar</className>
@@ -625,6 +705,7 @@
 			<package>cCJCommandBarSystem.pkg</package>
 			<groupName>Menus and Toolbars</groupName>
 			<libraryID>0</libraryID>
+			<classLibrary>Windows</classLibrary>
 		</class>
 	</classes>
 </classList>
